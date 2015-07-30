@@ -41,13 +41,9 @@ do
         echo " Number:        $COUNTER"
         echo " PID:           $pid "
 	echo " Domain:        $domain"
-        # echo " Port:          $port"
         echo " Executable:    $bin"
 	echo " TRA:           $tra"
 	echo " Repo:          $repo"
-        # echo " Logfile:       $log"
-        # echo " Config:        $conf"
-        # echo " Name:         $name"
 	for params in $details
 	do
 		 [[ $params == *.log ]] && echo " Logfile:       $params"
