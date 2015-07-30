@@ -23,8 +23,7 @@ echo
 #Try to iterate over each line
 for item in $data
 do
-		IFS=' ' read -a array <<< "$item"
-        # echo "Item: $item"
+	IFS=' ' read -a array <<< "$item"
         pid=${array[1]}
         bin=${array[10]}
 	for params in "${array[@]}"
@@ -37,8 +36,6 @@ do
 	domain=`cat $tra | grep "java.property.TIBCO_DOMAIN_NAME=" | awk '{split($0,a,"="); print a[2]}'`
 	repo=`cat $tra | grep "tibco.repourl=" | awk '{split($0,a,"="); print a[2]}'`
 	starters=`cat $tra | grep "Config.Primary.Partitions=" | awk '{split($0,a,"="); print a[2]}' `
-        # conf=`cat $log | grep "Reading configuration" | tail -1 |  awk '{split($0,a,"'"'"'"); print a[2]}'`
-        # name=`cat $conf | grep "server[[:space:]]*=" | awk '{split($0,a,"="); print a[2]}' `
         echo "-------------------------------------------------------------------------------------"
         echo " Product:       Tibco BusinessWorks Engine"
         echo " Number:        $COUNTER"
